@@ -21,6 +21,9 @@
           {{ $valueSpan := printf `<span id="busuanzi_value_page_pv"><img src="%s" alt="spinner.svg"/></span>` ("img/spinner.svg" | relURL) -}}
           <span id="busuanzi_container_page_pv" class="more-meta"> {{ printf (T "pagePV") $valueSpan | safeHTML }} </span>
         {{- end }}
+        <br>
+
+        <span class="post-time">Last Update: {{ .Lastmod.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }}</span>
       </div>
     </header>
 

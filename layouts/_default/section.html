@@ -22,12 +22,19 @@
 
     <div class="archive-post">
       <span class="archive-post-time">
-        {{ $element.Date.Format "01-02" }}
+        {{ $element.Date.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }}
       </span>
       <span class="archive-post-title">
         <a href="{{ $element.URL }}" class="archive-post-link">
           {{ .Title }}
-        </a>
+        </a><br>
+        {{ if .Params.description }}
+        {{ .Params.description }}
+        {{ else if .Params.summary}}
+        {{ .Params.summary}}
+        {{ else }}
+        {{ .Summary }}
+        {{ end }}
       </span>
     </div>
   {{- end -}}
