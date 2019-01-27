@@ -16,11 +16,12 @@
   {{- end }}
 
   {{ range $paginator.Pages -}}
-    <div class="archive-post">
-      <span class="archive-post-time">
+    {{ .Render "summary" }}
+    <!-- <div class="archive-post"> -->
+      <!-- <span class="archive-post-time">
         {{ .Date.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }}
-      </span>
-      <span class="archive-post-title">
+      </span> -->
+      <!-- <span class="archive-post-title">
         <a href="{{ .URL }}" class="archive-post-link">
           {{ .Title }}<br>
         </a>
@@ -31,8 +32,8 @@
         {{ else }}
         {{ .Summary }}
         {{ end }}
-      </span>
-    </div>
+      </span> -->
+    <!-- </div> -->
   {{- end }}
 </section>
 <!-- pagination -->
