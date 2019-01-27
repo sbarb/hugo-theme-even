@@ -68,20 +68,20 @@ module.exports = {
     ]
   },
   plugins: [extractSass, assetsManifest, cleanBuild],
-  optimization: {
-    minimizer: [
-      new UglifyJsPlugin({
-        parallel: true,
-        sourceMap: true,
-      }),
-      new OptimizeCSSAssetsPlugin({
-        cssProcessorOptions: {
-          map: {
-            inline: false,
-            annotation: true,
-          }
-        }
-      })
-    ]
-  }
+  // optimization: {
+  //   minimizer: [
+  //     new UglifyJsPlugin({
+  //       parallel: true,
+  //       sourceMap: true,
+  //     }),
+  //     new OptimizeCSSAssetsPlugin({
+  //       cssProcessorOptions: {
+  //         map: {
+  //           inline: false,
+  //           annotation: true,
+  //         }
+  //       }
+  //     })
+  //   ]
+  // }
 };
