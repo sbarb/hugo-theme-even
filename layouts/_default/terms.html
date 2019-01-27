@@ -5,9 +5,6 @@
   {{ $terms := .Data.Terms.ByCount -}}
   {{ $length := len $terms -}}
 
-  <!-- TOC -->
-  {{- partial "post/toc.html" . -}}
-
     <div class="terms">
       <div class="terms-title">
         {{ if eq $name "categories" -}}
@@ -50,6 +47,4 @@
         </div>
       {{ end -}}
     </div>
-
-
 {{- end }}
