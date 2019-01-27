@@ -8,6 +8,18 @@
     <span class="item-title">{{ T "lastMod" }}</span>
     <span class="item-content">{{ .Lastmod.Format (.Site.Params.dateFormatToUse | default "2006-01-02") }}</span>
   </p>
+  <hr>
+  <div class="copyright-hero">
+    <div class="copyright-hero-img">
+      <img class="author-profile-image" src="{{ (.Params.authorAvatar | default .Site.Author.avatar) | absURL}}" alt="Author" />
+    </div>
+    <div>
+      <strong class="copyright-hero-text">{{ if .Params.author }}{{ .Params.author | safeHTML }}{{ else }}{{ .Site.Author.name | safeHTML }}{{ end }}</strong> <br>
+      <span class="copyright-hero-text description">{{ if .Params.author }}{{ .Params.author.description | safeHTML }}{{ else }}{{ .Site.Author.description | safeHTML }}{{ end }}</span>
+    </div>
+  </div>
+
+  <hr>
   {{ if $.Site.Params.linkToMarkDown -}}
     {{ with $.OutputFormats.Get "markdown" -}}
     <p class="copyright-item">

@@ -2,7 +2,7 @@
 
 {{- define "content" }}
 {{- $paginator := .Paginate .Data.Pages.ByDate.Reverse .Site.Params.archivePaginate -}}
-<section id="archive" class="archive">
+<section id="archive" class="archive" style="padding-top:25px;margin-top:0">
   {{ if not $paginator.HasPrev -}}
     {{ if eq .Data.Plural "tags" -}}
       <div class="archive-title tag">
