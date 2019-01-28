@@ -1,6 +1,6 @@
 {{ "<?" | safeHTML }}xml-stylesheet type="text/xsl" href="{{ "sitemap.xsl" | absURL }}"{{ "?>" | safeHTML }}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  {{ range .Data.Pages }}
+  {{ range .Data.Pages.ByDate.Reverse }}
   <url>
     <loc>{{ .Permalink }}</loc>{{ if not .Lastmod.IsZero }}
     <lastmod>{{ safeHTML ( .Lastmod.Format "2006-01-02T15:04:05-07:00" ) }}</lastmod>{{ end }}{{ with .Sitemap.ChangeFreq }}

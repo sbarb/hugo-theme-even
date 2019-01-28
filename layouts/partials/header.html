@@ -11,14 +11,14 @@
 <nav class="site-navbar">
   <ul id="menu" class="menu">
     {{ $currentNode := . }}
-    {{ $activeClass := newScratch }}
+    {{ $activeClass := "" }}
     {{ range .Site.Menus.main -}}
       {{if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .)}}
-        {{$activeClass.Set "class" "menu-item active"}}
+        {{$activeClass = "menu-item active"}}
       {{ else }}
-        {{ $activeClass.Set "class" "menu-item" }}
+        {{$activeClass = "menu-item"}}
       {{end}}
-      <li class="{{ $activeClass.Get "class" }}">
+      <li class="{{ $activeClass }}">
         <a class="menu-item-link" href="{{ .URL | safeURL }}">{{ .Name }}</a>
       </li>
     {{- end }}

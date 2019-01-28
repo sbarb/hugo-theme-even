@@ -123,14 +123,14 @@ print("Hello, World!")
 {{ partial "header.html" . }}
 
   <h1>posts</h1>
-  {{ range first 10 .Data.Pages }}
+  {{ range first 10 .Data.Pages.ByDate.Reverse }}
     {{ if eq .Type "post"}}
       <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
     {{ end }}
   {{ end }}
 
   <h1>pages</h1>
-  {{ range .Data.Pages }}
+  {{ range .Data.Pages.ByDate.Reverse }}
     {{ if or (eq .Type "page") (eq .Type "about") }}
       <h2><a href="{{ .Permalink }}">{{ .Type }} - {{ .Title }} - {{ .RelPermalink }}</a></h2>
     {{ end }}
@@ -165,7 +165,7 @@ By `{{</* highlight go-html-template "linenos=table,hl_lines=1 3-7,linenostart=1
 <section id="main">
   <div>
    <h1 id="title">{{ .Title }}</h1>
-    {{ range .Data.Pages }}
+    {{ range .Data.Pages.ByDate.Reverse }}
         {{ .Render "summary"}}
     {{ end }}
   </div>

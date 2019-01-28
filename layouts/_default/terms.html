@@ -41,7 +41,7 @@
           <h1 class="terms-toggle" id="{{ $key }}-btn">+</h1>
         </div>
         <div id="{{ $key }}-dropdown" class="hide">
-          {{ range $value.Pages -}}
+          {{ range $value.Pages.ByDate.Reverse -}}
             {{ .Render "summary" }}
           {{ end -}}
         </div>
