@@ -50,7 +50,7 @@ $dark-gray: #8a8a8a !default;
 $global-font-color: #34495e !default;
 
 // Font size attribute applied to '<html>' and '<body>'.
-$global-font-size: 16px !default;
+$global-font-size: 1em !default;
 
 // Global width of '<body>'.
 $global-body-width: 800px !default;
@@ -62,22 +62,22 @@ $global-container-padding: 0 20px !default;
 $global-lineheight: 1.5 !default;
 
 // Font family of the site.
-$global-font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif !default;
+$global-font-family: sans-serif, Arial !default;
 
 // Serif font family of the site.
-$global-serif-font-family: Athelas, STHeiti, Microsoft Yahei, serif !default;
+$global-serif-font-family: proxima-nova, sans-serif, Arial !default;
 
 // Background color of the site.
 $global-background: $white !default;
 
 // Headings font size of the site.
 $global-headings: (
-  h1: 26px,
+  h1: 28px,
   h2: 24px,
   h3: 20px,
-  h4: 16px,
-  h5: 14px,
-  h6: 14px
+  h4: 18px,
+  h5: 16px,
+  h6: 16px
 ) !default;
 
 
@@ -86,23 +86,23 @@ $global-headings: (
 $header-padding: 20px 20px !default;
 
 // Font family: Chancery
-@font-face {
-  font-family: 'Chancery';
-  src: url('../fonts/chancery/apple-chancery-webfont.eot');
-  src: local('Apple Chancery'), url('../fonts/chancery/apple-chancery-webfont.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/chancery/apple-chancery-webfont.woff2') format('woff2'),
-  url('../fonts/chancery/apple-chancery-webfont.woff') format('woff'),
-  url('../fonts/chancery/apple-chancery-webfont.ttf') format('truetype'),
-  url('../fonts/chancery/apple-chancery-webfont.svg#apple-chancery') format('svg');
-  font-weight: lighter;
-  font-style: normal;
-}
+// @font-face {
+//   font-family: 'Chancery';
+//   src: url('../fonts/chancery/apple-chancery-webfont.eot');
+//   src: local('Apple Chancery'), url('../fonts/chancery/apple-chancery-webfont.eot?#iefix') format('embedded-opentype'),
+//   url('../fonts/chancery/apple-chancery-webfont.woff2') format('woff2'),
+//   url('../fonts/chancery/apple-chancery-webfont.woff') format('woff'),
+//   url('../fonts/chancery/apple-chancery-webfont.ttf') format('truetype'),
+//   url('../fonts/chancery/apple-chancery-webfont.svg#apple-chancery') format('svg');
+//   font-weight: lighter;
+//   font-style: normal;
+// }
 
 // Font size of the logo.
 $logo-font-size: 30px !default;
 
 // Font family of the logo.
-$logo-font-family: sans-serif !default;
+$logo-font-family: proxima-nova, sans-serif, Arial !default;
 
 // Margin of menu item.
 $menu-item-margin-left: 10px !default;
@@ -152,6 +152,13 @@ $post-tags-padding: 15px 0 !default;
 
 // Font size of post pagination.
 $post-nav-font-size: 18px !default;
+
+.post .post-header .post-title {
+  font-size: 2.5em !important;
+}
+.post .post-header .post-link {
+  font-size: 27px !important;
+}
 
 
 // ========== TOC ========== //
